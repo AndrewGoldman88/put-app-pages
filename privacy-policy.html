@@ -3,32 +3,46 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Политика конфиденциальности — ПУТЬ</title>
+<title>ПУТЬ — Privacy Policy / Политика конфиденциальности</title>
 <style>
+*{box-sizing:border-box}
 body{margin:0;background:#0a0b0f;color:#e8e8ed;font:16px/1.65 Arial,sans-serif}
-main{max-width:900px;margin:0 auto;padding:40px 22px 70px}
+main{max-width:900px;margin:0 auto;padding:30px 22px 70px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
 h1,h2{line-height:1.2;color:#fff} h1{font-size:32px} h2{margin-top:34px;font-size:22px}
 .card{background:#12141b;border:1px solid #252936;border-radius:16px;padding:20px;margin:18px 0}
-a{color:#a78bfa} li{margin:7px 0}.muted{color:#a7a8b2}
+.muted{color:#a7a8b2}
+.lang{display:flex;gap:8px}
+button{cursor:pointer;border:1px solid #303443;background:#1b1e28;color:#fff;border-radius:10px;padding:9px 14px}
+button.active{background:#30354a}
+a{color:#a78bfa}
+li{margin:7px 0}
 .warn{border-color:#806000;background:#17150d}
+code{word-break:break-word}
 </style>
 </head>
 <body>
 <main>
-<h1>Политика конфиденциальности — ПУТЬ</h1>
-<p class="muted">Дата вступления в силу: 25 сентября 2026 года</p>
-
-<div class="card warn">
-<strong>Перед публикацией:</strong> замените <code>[EMAIL РАЗРАБОТЧИКА]</code> на действующий адрес электронной почты разработчика. Он должен быть доступен пользователям для вопросов о конфиденциальности.
+<div class="top">
+<div>
+<h1 id="title">Политика конфиденциальности — ПУТЬ</h1>
+<p class="muted" id="date">Дата вступления в силу: 25 сентября 2026 года</p>
+</div>
+<div class="lang">
+<button id="ruBtn" onclick="setLang('ru')">Русский</button>
+<button id="enBtn" onclick="setLang('en')">English</button>
+</div>
 </div>
 
-<h2>1. О приложении</h2>
+<section id="ru">
+<div class="card warn"><strong>Контакт:</strong> <a href="mailto:iralinandreu@gmail.com">iralinandreu@gmail.com</a></div>
+
+<h2>1. Об приложении</h2>
 <p>«ПУТЬ» — приложение для дисциплины, самоконтроля и отслеживания личного прогресса.</p>
-<p>Разработчик: ПУТЬ / [ЮРИДИЧЕСКОЕ ИМЯ ИЛИ ИМЯ РАЗРАБОТЧИКА, ЕСЛИ ТРЕБУЕТСЯ]</p>
-<p>Контакт по вопросам конфиденциальности: <a href="mailto:iralinandreu@gmail.com">mailto:iralinandreu@gmail.com</a></p>
+<p>Разработчик: ПУТЬ</p>
+<p>Контакт по вопросам конфиденциальности: <a href="mailto:iralinandreu@gmail.com">iralinandreu@gmail.com</a></p>
 
 <h2>2. Какие данные обрабатывает приложение</h2>
-<p>В зависимости от того, используете ли вы приложение без аккаунта или входите в аккаунт, приложение может обрабатывать следующие данные:</p>
 <ul>
 <li><strong>Данные аккаунта:</strong> адрес электронной почты и идентификатор пользователя, необходимые для регистрации, входа и синхронизации.</li>
 <li><strong>Данные прогресса:</strong> дата начала, серии дней, отметки о срывах, выполненные задания, ранг, настройки режима и другие показатели прогресса.</li>
@@ -46,12 +60,7 @@ a{color:#a78bfa} li{margin:7px 0}.muted{color:#a7a8b2}
 
 <h2>4. Для чего используются данные</h2>
 <ul>
-<li>для работы функций приложения;</li>
-<li>для сохранения и восстановления личного прогресса;</li>
-<li>для синхронизации прогресса между устройствами при использовании аккаунта;</li>
-<li>для работы настроек, дневника, статистики, календаря, журнала и других функций;</li>
-<li>для аутентификации пользователя и управления аккаунтом;</li>
-<li>для выполнения запроса на удаление аккаунта и связанных с ним облачных данных.</li>
+<li>для работы функций приложения;</li><li>для сохранения и восстановления личного прогресса;</li><li>для синхронизации прогресса между устройствами при использовании аккаунта;</li><li>для работы настроек, дневника, статистики, календаря, журнала и других функций;</li><li>для аутентификации пользователя и управления аккаунтом;</li><li>для выполнения запроса на удаление аккаунта и связанных с ним облачных данных.</li>
 </ul>
 <p>Приложение не использует пользовательские данные для рекламы и не содержит встроенной аналитической системы, такой как Google Analytics, Firebase Analytics, Sentry или PostHog, в проверенной версии проекта.</p>
 
@@ -69,14 +78,13 @@ a{color:#a78bfa} li{margin:7px 0}.muted{color:#a7a8b2}
 
 <h2>8. Удаление аккаунта и данных</h2>
 <p>Пользователь с аккаунтом может инициировать удаление аккаунта из настроек приложения. При выполнении удаления приложение вызывает процедуру удаления на стороне Supabase, удаляет облачное состояние пользователя и очищает локальные данные приложения.</p>
-<p>Также доступен внешний ресурс для удаления аккаунта, который позволяет выполнить запрос без повторной установки приложения:</p>
-<p><strong>URL страницы удаления:</strong> <code>[УКАЖИТЕ ПУБЛИЧНЫЙ HTTPS-URL delete-account.html]</code></p>
+<p>Также доступен внешний ресурс для удаления аккаунта:</p>
+<p><strong>Страница удаления:</strong> <a href="delete-account.html">Удаление аккаунта</a></p>
 <p>Пользовательские резервные копии, экспортированные в отдельные файлы, не удаляются автоматически приложением и должны быть удалены пользователем самостоятельно.</p>
 
 <h2>9. Срок хранения</h2>
 <p>Локальные данные хранятся до их удаления пользователем, сброса данных приложения, очистки хранилища браузера или удаления приложения в зависимости от используемой платформы.</p>
 <p>Облачные данные аккаунта хранятся пока аккаунт используется либо до запроса на удаление. После успешного удаления аккаунта приложение удаляет связанные с ним данные из используемого облачного хранилища в рамках реализованного процесса удаления.</p>
-<p>Отдельные технические резервные копии инфраструктурных провайдеров могут иметь собственные сроки хранения, если это предусмотрено их техническими или юридическими требованиями.</p>
 
 <h2>10. Безопасность</h2>
 <p>Передача данных аккаунта и облачной синхронизации выполняется через защищённое HTTPS-соединение. Доступ к облачным данным осуществляется через аутентифицированную сессию пользователя.</p>
@@ -84,14 +92,97 @@ a{color:#a78bfa} li{margin:7px 0}.muted{color:#a7a8b2}
 
 <h2>11. Права пользователя и вопросы</h2>
 <p>Вы можете использовать приложение без создания аккаунта, если соответствующая версия приложения это позволяет. Вы можете изменить или удалить локальные данные через доступные функции приложения, а данные аккаунта — посредством функции удаления аккаунта.</p>
-<p>По вопросам конфиденциальности или обработки данных обращайтесь: <a href="mailto:mailto:iralinandreu@gmail.com">mailto:iralinandreu@gmail.com</a>.</p>
+<p>По вопросам конфиденциальности: <a href="mailto:iralinandreu@gmail.com">iralinandreu@gmail.com</a>.</p>
 
 <h2>12. Изменения политики</h2>
 <p>Политика может обновляться при изменении функций приложения, способов обработки данных или требований законодательства и платформ распространения. Актуальная версия должна размещаться по постоянному публичному HTTPS-адресу.</p>
 
 <h2>13. Важное ограничение</h2>
 <p>Приложение предназначено для личного самоконтроля и ведения записей и не является медицинской системой или заменой профессиональной медицинской помощи.</p>
+</section>
 
+<section id="en" hidden>
+<div class="card warn"><strong>Privacy contact:</strong> <a href="mailto:iralinandreu@gmail.com">iralinandreu@gmail.com</a></div>
+
+<h2>1. About the app</h2>
+<p>“ПУТЬ” is an application for discipline, self-control, and tracking personal progress.</p>
+<p>Developer: ПУТЬ</p>
+<p>Privacy contact: <a href="mailto:iralinandreu@gmail.com">iralinandreu@gmail.com</a></p>
+
+<h2>2. What data the app processes</h2>
+<ul>
+<li><strong>Account data:</strong> email address and user identifier required for registration, sign-in, and synchronization.</li>
+<li><strong>Progress data:</strong> start date, streaks, relapse records, completed tasks, rank, mode settings, and other progress indicators.</li>
+<li><strong>Journal:</strong> entries that you voluntarily enter into the app.</li>
+<li><strong>Mood:</strong> mood ratings that you voluntarily save in the app.</li>
+<li><strong>Intimate log:</strong> dates and categories of entries that you voluntarily add to the relevant section.</li>
+<li><strong>Settings:</strong> language, theme, mode, cosmetic settings, notification settings, and other app parameters.</li>
+<li><strong>Backup data:</strong> when you use the export function, the app creates a JSON file containing the saved app state. You choose where this file is stored.</li>
+</ul>
+
+<h2>3. Where data is stored</h2>
+<p>Without an account, the main app data is stored locally in the user's browser or on the device.</p>
+<p>When an account is used, the app state is synchronized with Supabase infrastructure. The cloud record contains app-state data associated with the user's identifier.</p>
+<p>The local app-lock PIN is not sent to Supabase. The app stores a PIN hash and salt locally. When biometric unlocking is used, the app stores a WebAuthn credential identifier, not a fingerprint, face image, or other raw biometric template.</p>
+
+<h2>4. How data is used</h2>
+<ul>
+<li>to provide app functionality;</li><li>to save and restore personal progress;</li><li>to synchronize progress between devices when an account is used;</li><li>to provide settings, journal, statistics, calendar, log, and other features;</li><li>to authenticate users and manage accounts;</li><li>to process account deletion requests and delete associated cloud data.</li>
+</ul>
+<p>The app does not use user data for advertising and the reviewed version of the project does not contain built-in analytics systems such as Google Analytics, Firebase Analytics, Sentry, or PostHog.</p>
+
+<h2>5. Third-party services</h2>
+<p>Supabase is used for authentication and cloud synchronization. The project uses the Supabase service at <code>gibzdydxpavidqmzivsr.supabase.co</code>.</p>
+<p>The app may also access CDN services such as jsDelivr and Google Fonts to load software libraries or fonts.</p>
+<p>The app does not sell user data.</p>
+
+<h2>6. Notifications</h2>
+<p>If you grant notification permission, the app uses that permission to display the notifications and reminders provided by the app. Notification settings are stored as part of the app state.</p>
+
+<h2>7. Backups</h2>
+<p>A backup export is initiated by the user. The app creates a JSON file containing the app state, including applicable user entries.</p>
+<p>After export, the copy is under the user's control. If you transfer or store such a file elsewhere, its subsequent storage is governed by the rules of that storage location. Deleting an account in the app cannot automatically delete a separate JSON backup previously exported outside the app.</p>
+
+<h2>8. Account and data deletion</h2>
+<p>A user with an account can initiate account deletion from the app settings. During deletion, the app calls the deletion procedure on Supabase, removes the user's cloud state, and clears local app data.</p>
+<p>An external account-deletion resource is also available:</p>
+<p><strong>Deletion page:</strong> <a href="delete-account.html">Delete account</a></p>
+<p>Backup files exported separately by the user are not automatically deleted by the app and must be deleted by the user.</p>
+
+<h2>9. Data retention</h2>
+<p>Local data is retained until the user deletes it, resets app data, clears browser storage, or removes the app, depending on the platform used.</p>
+<p>Account cloud data is retained while the account is in use or until a deletion request is made. After successful account deletion, the app deletes the associated data from the cloud storage used by the app as part of the implemented deletion process.</p>
+
+<h2>10. Security</h2>
+<p>Account and cloud-synchronization data is transmitted over HTTPS. Access to cloud data is performed through an authenticated user session.</p>
+<p>The local app lock is an additional device-level protection feature and does not replace the device's system lock.</p>
+
+<h2>11. User rights and contact</h2>
+<p>You may use the app without creating an account if the applicable version of the app allows it. You can change or delete local data using the available app functions, and account data can be deleted using the account-deletion function.</p>
+<p>Privacy contact: <a href="mailto:iralinandreu@gmail.com">iralinandreu@gmail.com</a>.</p>
+
+<h2>12. Changes to this policy</h2>
+<p>This policy may be updated when app features, data-processing practices, legal requirements, or platform requirements change. The current version should remain available at a permanent public HTTPS address.</p>
+
+<h2>13. Important limitation</h2>
+<p>The app is intended for personal self-control and record keeping. It is not a medical system and is not a substitute for professional medical advice.</p>
+</section>
 </main>
+<script>
+function setLang(lang){
+  const ru=lang==='ru';
+  document.documentElement.lang=lang;
+  document.getElementById('ru').hidden=!ru;
+  document.getElementById('en').hidden=ru;
+  document.getElementById('ruBtn').classList.toggle('active',ru);
+  document.getElementById('enBtn').classList.toggle('active',!ru);
+  document.getElementById('title').textContent=ru?'Политика конфиденциальности — ПУТЬ':'Privacy Policy — ПУТЬ';
+  document.getElementById('date').textContent=ru?'Дата вступления в силу: 25 сентября 2026 года':'Effective date: September 25, 2026';
+  localStorage.setItem('privacy_policy_lang',lang);
+}
+const saved=localStorage.getItem('privacy_policy_lang');
+const browser=(navigator.language||'ru').toLowerCase();
+setLang(saved || (browser.startsWith('ru')?'ru':'en'));
+</script>
 </body>
 </html>
